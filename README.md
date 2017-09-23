@@ -8,7 +8,7 @@ This is a library of Javascript functions created with the purpose of practicing
 
 Called to execute some passed function over all elements of a passed list without return any result.
 
-**Input**: (*list*, *callback function*)
+**Input**: (*list*, *callback function*)  
 **Output**: *undefined*
 
 ```javascript
