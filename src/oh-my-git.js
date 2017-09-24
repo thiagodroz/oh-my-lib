@@ -15,7 +15,7 @@ export default class OhMyLib {
   }
 
   extractProperty(list, property) {
-    if (typeof property !== 'string') return [];
+    if (typeof property !== 'string') return undefined;
 
     let extractedList = [];
 
@@ -32,7 +32,21 @@ export default class OhMyLib {
     return x > y ? x : y;
   }
 
+  maxOfList(list) {
+    if (!Array.isArray(list)) return undefined;
+    if (!list.length) return undefined;
+    if (list.length === 1) return list[0];
+
+    const maxOfTheEnd = this.maxOfList(list.slice(1, list.length));
+
+    return list[0] > maxOfTheEnd ? list[0] : maxOfTheEnd;
+  }
+
   maxOfProperty(list, property) {
-    if (!list.length) return;
+    if (!Array.isArray(list)) return undefined;
+    if (!list.length) return undefined;
+    if (typeof property !== 'string') return undefined;
+
+    return this.maxOfList(this.extractProperty(list, property));
   }
 }
