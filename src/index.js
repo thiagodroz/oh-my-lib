@@ -1,2 +1,2 @@
-import Lists from './lists.js';
-export { Lists };
+import OhMyLib from './oh-my-git.js';
+export default OhMyLib;
