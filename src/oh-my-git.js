@@ -49,4 +49,32 @@ export default class OhMyLib {
 
     return this.maxOfList(this.extractProperty(list, property));
   }
+
+  maxOccurrence(list) {
+    if (!Array.isArray(list)) return undefined;
+    if (!list.length) return undefined;
+    if (list.length === 1) return list[0];
+
+    let occurrences = [];
+
+    list.map((element) => {
+      if (occurrences[element] === undefined) {
+        occurrences[element] = 1;
+      }
+
+      occurrences[element]++;
+    });
+
+    let mostFrenquent = undefined;
+    let frequency = 0;
+
+    occurrences.map((freq, key) => {
+      if (freq > frequency) {
+        frequency = freq;
+        mostFrenquent = key;
+      }
+    });
+
+    return mostFrenquent;
+  }
 }
