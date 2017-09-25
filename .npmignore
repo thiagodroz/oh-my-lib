@@ -1,0 +1,10 @@
+lib/Library.js
+lib/Library.js.map
+src
+test
+.babelrc
+.editorconfig
+.eslintrc
+.nvmrc
+.package-lock.json
+webpack.config.js

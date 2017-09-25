@@ -1,8 +1,8 @@
 {
   "name": "oh-my-lib",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "A Javascript functions library",
-  "main": "lib/library.js",
+  "main": "lib/Library.min.js",
   "scripts": {
     "build": "webpack --env build",
     "dev": "webpack --progress --colors --watch --env dev",
@@ -25,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/krasimir/webpack-library-starter.git"
+    "url": "git+https://github.com/thiagodroz/oh-my-lib.git"
   },
   "keywords": [
     "webpack",
@@ -36,10 +36,14 @@
     "umd",
     "commonjs"
   ],
-  "author": "Krasimir Tsonev",
+  "author": "Thiago Nogueira",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/krasimir/webpack-library-starter/issues"
+    "url": "https://github.com/thiagodroz/oh-my-lib/issues"
   },
-  "homepage": "https://github.com/krasimir/webpack-library-starter"
+  "homepage": "https://github.com/thiagodroz/oh-my-lib",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  }
 }
