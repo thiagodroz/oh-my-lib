@@ -1,5 +1,5 @@
 import chai from 'chai';
-import OhMyLib from '../lib/Library.js';
+import OhMyLib from '../lib/Library.min.js';
 
 chai.expect();
 
