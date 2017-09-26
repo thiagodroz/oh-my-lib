@@ -1,4 +1,4 @@
-export default class OhMyLib {
+class OhMyLib {
   constructor() {
     this._name = 'OhMyLib';
   }
@@ -65,7 +65,7 @@ export default class OhMyLib {
       occurrences[element]++;
     });
 
-    let mostFrenquent = undefined;
+    let mostFrenquent;
     let frequency = 0;
 
     occurrences.map((freq, key) => {
@@ -78,3 +78,5 @@ export default class OhMyLib {
     return mostFrenquent;
   }
 }
+
+export const ohMyLib = new OhMyLib();
