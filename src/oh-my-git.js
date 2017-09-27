@@ -68,12 +68,12 @@ class OhMyLib {
     let mostFrenquent;
     let frequency = 0;
 
-    occurrences.map((freq, key) => {
-      if (freq > frequency) {
-        frequency = freq;
+    for (let key in occurrences) {
+      if (occurrences[key] > frequency) {
+        frequency = occurrences[key];
         mostFrenquent = key;
       }
-    });
+    }
 
     return mostFrenquent;
   }
