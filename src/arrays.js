@@ -9,12 +9,41 @@ export default class Arrays extends Math {
     return this._name;
   }
 
+  first(list) {
+    if (!Array.isArray(list)) return undefined;
+    if (!list.length) return undefined;
+
+    return list[0];
+  }
+
+  tail(list) {
+    if (!Array.isArray(list)) return undefined;
+    if (!list.length) return undefined;
+    if (list.length === 1) return [];
+
+    return list.slice(1, list.length);
+  }
+
+  last(list) {
+    if (!Array.isArray(list)) return undefined;
+    if (!list.length) return undefined;
+
+    return list[list.length - 1];
+  }
+
+  init(list) {
+    if (!Array.isArray(list)) return undefined;
+    if (!list.length) return undefined;
+
+    return list.slice(0, list.length - 1);
+  }
+
   each(list, iteratee, results) {
     if (typeof iteratee !== 'function') return;
     if (!list.length) return;
 
     iteratee(list[0]);
-    this.each(list.slice(1, list.length), iteratee);
+    this.each(this.tail(list), iteratee);
   }
 
   maxOfList(list) {
@@ -22,7 +51,7 @@ export default class Arrays extends Math {
     if (!list.length) return undefined;
     if (list.length === 1) return list[0];
 
-    const maxOfTheEnd = this.maxOfList(list.slice(1, list.length));
+    const maxOfTheEnd = this.maxOfList(this.tail(list));
 
     return list[0] > maxOfTheEnd ? list[0] : maxOfTheEnd;
   }

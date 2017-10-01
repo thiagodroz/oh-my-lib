@@ -4,6 +4,58 @@ This is a library of Javascript functions created with the purpose of practicing
 
 ## Lists functions
 
+### first
+
+Return the first element of the list
+
+**Input**: (*list*)  
+**Output**: *number/string*
+
+```javascript
+const result = first([1,2,3]);
+
+//result == 1
+```
+
+### tail
+
+Return the the list without the first element
+
+**Input**: (*list*)  
+**Output**: *list*
+
+```javascript
+const result = tail([1,2,3]);
+
+//result == [2,3]
+```
+
+### last
+
+Return the last element of the list
+
+**Input**: (*list*)  
+**Output**: *number/string*
+
+```javascript
+const result = last([1,2,3]);
+
+//result == 3
+```
+
+### init
+
+Return the the list without the last element
+
+**Input**: (*list*)  
+**Output**: *list*
+
+```javascript
+const result = init([1,2,3]);
+
+//result == [1,2]
+```
+
 ### each
 
 Called to execute some passed function over all elements of a passed list without return any result.
