@@ -1,14 +1,6 @@
 import Arrays from './arrays';
 
 export default class Collections extends Arrays {
-  constructor() {
-    super();
-    this._name = 'Collections';
-  }
-  get name() {
-    return this._name;
-  }
-
   extractProperty(list, property) {
     if (typeof property !== 'string') return undefined;
 

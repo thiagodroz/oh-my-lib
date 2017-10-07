@@ -1,14 +1,13 @@
-export default class Math {
+import Validators from './validators';
+
+export default class Math extends Validators {
   constructor() {
-    this._name = 'Math';
-  }
-  get name() {
-    return this._name;
+    super();
+
+    this.max = this.applyValidation.bind(this, this.max, this.validateNoneIsUndefined)();
   }
 
   max(x, y) {
-    if (x === undefined || y === undefined) return undefined;
-
     return x > y ? x : y;
   }
 };

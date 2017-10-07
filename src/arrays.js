@@ -1,14 +1,6 @@
 import Math from './math';
 
 export default class Arrays extends Math {
-  constructor() {
-    super();
-    this._name = 'Arrays';
-  }
-  get name() {
-    return this._name;
-  }
-
   first(list) {
     if (!Array.isArray(list)) return undefined;
     if (!list.length) return undefined;
