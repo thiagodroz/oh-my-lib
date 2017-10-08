@@ -5,7 +5,7 @@ chai.expect();
 
 const expect = chai.expect;
 
-describe('Given the validators of my lib', () => {
+describe('Given the "validators" functions of my lib', () => {
   describe('when the method "validateNoneIsUndefined" is called', () => {
     it('should return undefined if something different of a function is passed as the first parameter', () => {
       expect(OhMyLib.validateNoneIsUndefined(1)).to.be.undefined;
