@@ -11,6 +11,10 @@ describe('Given the validators of my lib', () => {
       expect(OhMyLib.validateNoneIsUndefined(1)).to.be.undefined;
     });
 
+    it('should return undefined if undefined parameters are passed', () => {
+      expect(OhMyLib.validateNoneIsUndefined((x) => { return x; }, undefined, undefined)).to.be.undefined;
+    });
+
     it('should return the return of the function if a function is passed as the first parameter', () => {
       expect(OhMyLib.validateNoneIsUndefined(() => { return 1; })).to.be.equal(1);
       expect(OhMyLib.validateNoneIsUndefined(() => { })).to.be.undefined;

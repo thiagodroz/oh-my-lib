@@ -175,7 +175,7 @@ describe('Given an instance of my library', () => {
       expect(OhMyLib.maxOfProperty(1, 'age')).to.be.undefined;
     });
     it('should return undefined if something different of a string is passed to property', () => {
-      expect(OhMyLib.maxOfProperty(1, 'age')).to.be.undefined;
+      expect(OhMyLib.maxOfProperty([{ age: 20 }], 3)).to.be.undefined;
     });
     it('should return undefined if an empty list is passed', () => {
       expect(OhMyLib.maxOfProperty([])).to.be.undefined;

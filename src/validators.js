@@ -6,8 +6,8 @@ export default class Validators {
   validateNoneIsUndefined(toBeValidated, ...passedArguments) {
     if (typeof toBeValidated !== 'function') return undefined;
 
-    for (let argument in passedArguments) {
-      if (argument === undefined) {
+    for (let index in passedArguments) {
+      if (passedArguments[index] === undefined) {
         return undefined;
       }
     }
