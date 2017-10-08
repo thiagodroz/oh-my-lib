@@ -6,8 +6,8 @@
   "scripts": {
     "build": "webpack --env build",
     "dev": "webpack --progress --colors --watch --env dev",
-    "test": "mocha --compilers js:babel-core/register --colors ./test/*.spec.js",
-    "test:watch": "mocha --compilers js:babel-core/register --colors -w ./test/*.spec.js"
+    "test": "nyc mocha --compilers js:babel-core/register --colors ./test/*.spec.js",
+    "test:watch": "nyc mocha --compilers js:babel-core/register --colors -w ./test/*.spec.js"
   },
   "devDependencies": {
     "babel-cli": "6.24.1",
@@ -20,6 +20,7 @@
     "eslint": "3.19.0",
     "eslint-loader": "1.7.1",
     "mocha": "3.3.0",
+    "nyc": "^11.2.1",
     "webpack": "3.1.0",
     "yargs": "7.1.0"
   },
@@ -28,13 +29,14 @@
     "url": "git+https://github.com/thiagodroz/oh-my-lib.git"
   },
   "keywords": [
-    "webpack",
     "es6",
-    "starter",
+    "functions",
     "library",
     "universal",
-    "umd",
-    "commonjs"
+    "tests",
+    "mit",
+    "webpack",
+    "javascript"
   ],
   "author": "Thiago Nogueira",
   "license": "MIT",
@@ -46,5 +48,12 @@
     "lib": "lib",
     "test": "test"
   },
-  "dependencies": {}
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "sourceMap": false,
+    "instrument": false
+  }
 }
