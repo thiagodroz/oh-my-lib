@@ -1,15 +1,23 @@
 import Math from './math';
 
 export default class Arrays extends Math {
+  constructor() {
+    super();
+
+    this.first = this.applyValidation.bind(this, this.first, this.validateArgumentIsAnArray, 0)();
+    this.tail = this.applyValidation.bind(this, this.tail, this.validateArgumentIsAnArray, 0)();
+    this.last = this.applyValidation.bind(this, this.last, this.validateArgumentIsAnArray, 0)();
+    this.init = this.applyValidation.bind(this, this.init, this.validateArgumentIsAnArray, 0)();
+    this.maxOfList = this.applyValidation.bind(this, this.maxOfList, this.validateArgumentIsAnArray, 0)();
+  }
+
   first(list) {
-    if (!Array.isArray(list)) return undefined;
     if (!list.length) return undefined;
 
     return list[0];
   }
 
   tail(list) {
-    if (!Array.isArray(list)) return undefined;
     if (!list.length) return undefined;
     if (list.length === 1) return [];
 
@@ -17,14 +25,12 @@ export default class Arrays extends Math {
   }
 
   last(list) {
-    if (!Array.isArray(list)) return undefined;
     if (!list.length) return undefined;
 
     return list[list.length - 1];
   }
 
   init(list) {
-    if (!Array.isArray(list)) return undefined;
     if (!list.length) return undefined;
 
     return list.slice(0, list.length - 1);
@@ -39,13 +45,12 @@ export default class Arrays extends Math {
   }
 
   maxOfList(list) {
-    if (!Array.isArray(list)) return undefined;
     if (!list.length) return undefined;
     if (list.length === 1) return list[0];
 
-    const maxOfTheEnd = this.maxOfList(this.tail(list));
+    const maxOfTheEnd = this.maxOfList.bind(this)(this.tail(list));
 
-    return list[0] > maxOfTheEnd ? list[0] : maxOfTheEnd;
+    return this.max(list[0], maxOfTheEnd);
   }
 
   maxOccurrence(list) {

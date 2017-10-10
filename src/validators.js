@@ -1,6 +1,6 @@
 export default class Validators {
   applyValidation(toBeValidated, validator, ...passedArguments) {
-    return validator.bind(this, this.max, ...passedArguments);
+    return validator.bind(this, toBeValidated, ...passedArguments);
   }
 
   validateNoneIsUndefined(toBeValidated, ...passedArguments) {
@@ -11,6 +11,15 @@ export default class Validators {
         return undefined;
       }
     }
+
     return toBeValidated(...passedArguments);
+  }
+
+  validateArgumentIsAnArray(toBeValidated, argumentIndex, ...passedArguments) {
+    if (typeof toBeValidated !== 'function') return undefined;
+    if (!Number.isInteger(argumentIndex)) return undefined;
+    if (!Array.isArray(passedArguments[argumentIndex])) return undefined;
+
+    return toBeValidated.bind(this)(...passedArguments);
   }
 };
