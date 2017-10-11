@@ -1,4 +1,4 @@
-# Oh My Lib
+# Oh My Lib [![Build Status](https://travis-ci.org/thiagodroz/oh-my-lib.svg?branch=master)](https://travis-ci.org/thiagodroz/oh-my-lib) [![Maintainability](https://api.codeclimate.com/v1/badges/d39c957238ae67272fd7/maintainability)](https://codeclimate.com/github/thiagodroz/oh-my-lib/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/d39c957238ae67272fd7/test_coverage)](https://codeclimate.com/github/thiagodroz/oh-my-lib/test_coverage)
 
 This is a library of Javascript functions created with the purpose of practicing my Javascript skills and putting into practice some less used techniques. Therefore, not all functions are done in a way that has the best possible performance because they may have been done by focusing on a specific approach for study purposes.
 
