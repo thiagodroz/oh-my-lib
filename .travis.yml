@@ -7,7 +7,10 @@ before_script:
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 script:
+  - npm install -g codeclimate-test-reporter
   - npm install
   - npm run test
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - CODECLIMATE_REPO_TOKEN=$CC_REPO_TOKEN codeclimate-test-reporter < ./coverage/lcov.info
+
