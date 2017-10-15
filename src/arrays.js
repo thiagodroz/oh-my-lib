@@ -9,8 +9,8 @@ export default class Arrays extends Math {
     this.last = this.applyValidation.bind(this, this.last, this.validateArgumentIsAnArray, 0)();
     this.init = this.applyValidation.bind(this, this.init, this.validateArgumentIsAnArray, 0)();
     this.each = this.applyValidation.bind(this, this.each, this.validateArgumentIsAFunction, 1)();
-    this.reduce = this.applyValidation.bind(this, this.reduce, this.validateArgumentIsAnArray, 0)();
-    this.reduce = this.applyValidation.bind(this, this.reduce, this.validateArgumentIsAFunction, 1)();
+    this.filter = this.applyValidation.bind(this, this.filter, this.validateArgumentIsAnArray, 0)();
+    this.filter = this.applyValidation.bind(this, this.filter, this.validateArgumentIsAFunction, 1)();
     this.maxOfList = this.applyValidation.bind(this, this.maxOfList, this.validateArgumentIsAnArray, 0)();
   }
 
@@ -46,7 +46,7 @@ export default class Arrays extends Math {
     this.each(this.tail(list), iteratee);
   }
 
-  reduce(list, iteratee) {
+  filter(list, iteratee) {
     let result = [];
 
     this.each(list, (element) => {
