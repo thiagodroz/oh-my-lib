@@ -89,6 +89,33 @@ describe('Given the "arrays" functions of my lib', () => {
     });
   });
 
+  describe('when the method "reduce" is called', () => {
+    it('should return undefined if something different than a list is passed', () => {
+      let result = OhMyLib.reduce(2, (element) => { return element >= 2 });
+
+      expect(result).to.be.undefined;
+    });
+
+    it('should return undefined if something different than a function is passed', () => {
+      let result = OhMyLib.reduce([], 2);
+
+      expect(result).to.be.undefined;
+    });
+
+    it('should return an empty list if an empty list is passed', () => {
+      let result = OhMyLib.reduce([], (element) => { return element >= 2 });
+
+      expect(result).to.be.empty;
+    });
+
+    it('should return the valid elements if a list is passed', () => {
+      let result = OhMyLib.reduce([1,2,3], (element) => { return element >= 2 });
+
+      expect(result).to.contains(2);
+      expect(result).to.contains(3);
+    });
+  });
+
   describe('when the method "maxOfList" is called', () => {
     it('should return undefined if something different of a list is passed', () => {
       expect(OhMyLib.maxOfList(1)).to.be.undefined;

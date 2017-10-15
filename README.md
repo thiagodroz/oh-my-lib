@@ -110,6 +110,19 @@ Called to execute some passed function over all elements of a passed array witho
 each([1,2,3], (value) => { console.log(value) });
 ```
 
+### reduce
+
+Returns as result a list with the elements that passed the test defined by the passed function.
+
+**Input**: (*array*, *function*)  
+**Output**: *array*
+
+```javascript
+reduce([1,2,3], (value) => { return value > 1 });
+
+//result == [2,3]
+```
+
 ### maxOfList
 
 Called to get the biggest value between the values of a passed array.

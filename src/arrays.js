@@ -8,6 +8,9 @@ export default class Arrays extends Math {
     this.tail = this.applyValidation.bind(this, this.tail, this.validateArgumentIsAnArray, 0)();
     this.last = this.applyValidation.bind(this, this.last, this.validateArgumentIsAnArray, 0)();
     this.init = this.applyValidation.bind(this, this.init, this.validateArgumentIsAnArray, 0)();
+    this.each = this.applyValidation.bind(this, this.each, this.validateArgumentIsAFunction, 1)();
+    this.reduce = this.applyValidation.bind(this, this.reduce, this.validateArgumentIsAnArray, 0)();
+    this.reduce = this.applyValidation.bind(this, this.reduce, this.validateArgumentIsAFunction, 1)();
     this.maxOfList = this.applyValidation.bind(this, this.maxOfList, this.validateArgumentIsAnArray, 0)();
   }
 
@@ -36,12 +39,23 @@ export default class Arrays extends Math {
     return list.slice(0, list.length - 1);
   }
 
-  each(list, iteratee, results) {
-    if (typeof iteratee !== 'function') return;
+  each(list, iteratee) {
     if (!list.length) return;
 
     iteratee(list[0]);
     this.each(this.tail(list), iteratee);
+  }
+
+  reduce(list, iteratee) {
+    let result = [];
+
+    this.each(list, (element) => {
+      if (iteratee(element)) {
+        result.push(element);
+      }
+    });
+
+    return result;
   }
 
   maxOfList(list) {

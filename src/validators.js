@@ -22,4 +22,12 @@ export default class Validators {
 
     return toBeValidated.bind(this)(...passedArguments);
   }
+
+  validateArgumentIsAFunction(toBeValidated, argumentIndex, ...passedArguments) {
+    if (typeof toBeValidated !== 'function') return undefined;
+    if (!Number.isInteger(argumentIndex)) return undefined;
+    if (typeof passedArguments[argumentIndex] !== 'function') return undefined;
+
+    return toBeValidated.bind(this)(...passedArguments);
+  }
 };
