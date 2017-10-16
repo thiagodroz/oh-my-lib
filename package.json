@@ -6,8 +6,8 @@
   "scripts": {
     "build": "webpack --env build",
     "dev": "webpack --progress --colors --watch --env dev",
-    "test": "nyc mocha --compilers js:babel-core/register --colors ./test/*.spec.js",
-    "test:watch": "nyc mocha --compilers js:babel-core/register --colors -w ./test/*.spec.js"
+    "test": "nyc mocha --compilers js:babel-core/register --colors ./test/*.spec.js ./test/**/*.spec.js",
+    "test:watch": "nyc mocha --compilers js:babel-core/register --colors -w ./test/*.spec.js ./test/**/*.spec.js"
   },
   "devDependencies": {
     "babel-cli": "6.24.1",
