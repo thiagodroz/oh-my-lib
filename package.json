@@ -51,6 +51,13 @@
     "test": "test"
   },
   "nyc": {
+    "include": [
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "src/index.js",
+      "test/**.*"
+    ],
     "reporter": [
       "lcov",
       "text"
