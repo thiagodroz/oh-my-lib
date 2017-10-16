@@ -12,6 +12,7 @@ export default class Arrays extends Math {
     this.filter = this.applyValidation.bind(this, this.filter, this.validateArgumentIsAnArray, 0)();
     this.filter = this.applyValidation.bind(this, this.filter, this.validateArgumentIsAFunction, 1)();
     this.maxOfList = this.applyValidation.bind(this, this.maxOfList, this.validateArgumentIsAnArray, 0)();
+    this.maxOccurrence = this.applyValidation.bind(this, this.maxOccurrence, this.validateArgumentIsAnArray, 0)();
   }
 
   first(list) {
@@ -68,7 +69,6 @@ export default class Arrays extends Math {
   }
 
   maxOccurrence(list) {
-    if (!Array.isArray(list)) return undefined;
     if (!list.length) return undefined;
     if (list.length === 1) return list[0];
 
