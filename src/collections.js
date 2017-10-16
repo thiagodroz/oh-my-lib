@@ -1,6 +1,12 @@
 import Arrays from './arrays';
 
 export default class Collections extends Arrays {
+  constructor(props) {
+    super(props);
+
+    this.maxOfProperty = this.applyValidation.bind(this, this.maxOfProperty, this.validateArgumentIsAnArray, 0)();
+  }
+
   extractProperty(list, property) {
     if (typeof property !== 'string') return undefined;
 
@@ -14,7 +20,6 @@ export default class Collections extends Arrays {
   }
 
   maxOfProperty(list, property) {
-    if (!Array.isArray(list)) return undefined;
     if (!list.length) return undefined;
     if (typeof property !== 'string') return undefined;
 
