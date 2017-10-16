@@ -43,6 +43,19 @@ const result = min(5, 2);
 //result == 2
 ```
 
+### sumAllInRange
+
+Returns the sum of all integers between the first and the second parameters. If passed a third parameter, the result the result will be the sum of numbers starting from the first parameter but steping the passed value until reach the second parameter.
+
+**Input**: (*integer*, *integer*, *integer=1*)  
+**Output**: *number*
+
+```javascript
+const result = sumAllInRange(3, 99, 4);
+
+//result == 1275
+```
+
 ---
 
 ## Array functions
@@ -110,7 +123,7 @@ Called to execute some passed function over all elements of a passed array witho
 each([1,2,3], (value) => { console.log(value) });
 ```
 
-### reduce
+### filter
 
 Returns as result a list with the elements that passed the test defined by the passed function.
 
@@ -118,7 +131,7 @@ Returns as result a list with the elements that passed the test defined by the p
 **Output**: *array*
 
 ```javascript
-reduce([1,2,3], (value) => { return value > 1 });
+filter([1,2,3], (value) => { return value > 1 });
 
 //result == [2,3]
 ```
