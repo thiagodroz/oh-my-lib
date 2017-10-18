@@ -14,6 +14,7 @@ export default class Arrays extends Math {
     this.maxOfList = this.applyValidation.bind(this, this.maxOfList, this.validateArgumentIsAnArray, 0)();
     this.maxOccurrence = this.applyValidation.bind(this, this.maxOccurrence, this.validateArgumentIsAnArray, 0)();
     this.trueValues = this.applyValidation.bind(this, this.trueValues, this.validateArgumentIsAnArray, 0)();
+    this.except = this.applyValidation.bind(this, this.except, this.validateArgumentIsAnArray, 0)();
   }
 
   first(list) {
@@ -101,6 +102,18 @@ export default class Arrays extends Math {
 
     this.each(list, (element) => {
       if (element) result.push(element);
+    });
+
+    return result;
+  }
+
+  except(list, ...exceptions) {
+    let result = [];
+
+    this.each(list, (element) => {
+      if (!exceptions.includes(element)) {
+        result.push(element);
+      }
     });
 
     return result;
