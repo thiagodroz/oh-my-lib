@@ -162,6 +162,32 @@ const result = lib.maxOccurrence(['a','a','c','b','c','c']);
 //result == 'c'
 ```
 
+### trueValues
+
+Returns a copy of the passed array without the falsy values. In Javascript, the falsy values are false, null, 0, "", undefined and NaN.
+
+**Input**: (*array*)  
+**Output**: *array*
+
+```javascript
+const result = lib.trueValues(['c', 0, null, 1]);
+
+//result == ['c', 1]
+```
+
+### except
+
+Returns a copy of the passed array without the passed values.
+
+**Input**: (*array*, *number/string*...)  
+**Output**: *array*
+
+```javascript
+const result = lib.except(['a','a','c','b','c','c'], 'b', 'c');
+
+//result == ['a', 'a']
+```
+
 ---
 
 ## Collection functions
