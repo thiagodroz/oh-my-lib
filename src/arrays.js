@@ -13,6 +13,7 @@ export default class Arrays extends Math {
     this.filter = this.applyValidation.bind(this, this.filter, this.validateArgumentIsAFunction, 1)();
     this.maxOfList = this.applyValidation.bind(this, this.maxOfList, this.validateArgumentIsAnArray, 0)();
     this.maxOccurrence = this.applyValidation.bind(this, this.maxOccurrence, this.validateArgumentIsAnArray, 0)();
+    this.trueValues = this.applyValidation.bind(this, this.trueValues, this.validateArgumentIsAnArray, 0)();
   }
 
   first(list) {
@@ -93,5 +94,15 @@ export default class Arrays extends Math {
     }
 
     return mostFrenquent;
+  }
+
+  trueValues(list) {
+    let result = [];
+
+    this.each(list, (element) => {
+      if (element) result.push(element);
+    });
+
+    return result;
   }
 };
