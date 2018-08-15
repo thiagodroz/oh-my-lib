@@ -1,3 +1,6 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=dde1c6bc71857404342c0ad1d6ee58bbbff388b38fe608e13b763a27c892ce5a
 engines:
   eslint:
     enabled: true
@@ -6,6 +9,8 @@ engines:
     config:
       languages:
       - javascript:
+  nodesecurity:
+    enabled: true
 ratings:
   paths:
   - src/**

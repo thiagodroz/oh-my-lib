@@ -36,3 +36,6 @@ lib/
 
 #lock
 package-lock.json
+
+#ASDF
+.tool-versions
