@@ -4,17 +4,28 @@ export default class Arrays extends Math {
   constructor() {
     super();
 
-    this.first = this.applyValidation.bind(this, this.first, this.validateArgumentIsAnArray, 0)();
-    this.tail = this.applyValidation.bind(this, this.tail, this.validateArgumentIsAnArray, 0)();
-    this.last = this.applyValidation.bind(this, this.last, this.validateArgumentIsAnArray, 0)();
-    this.init = this.applyValidation.bind(this, this.init, this.validateArgumentIsAnArray, 0)();
-    this.each = this.applyValidation.bind(this, this.each, this.validateArgumentIsAFunction, 1)();
-    this.filter = this.applyValidation.bind(this, this.filter, this.validateArgumentIsAnArray, 0)();
-    this.filter = this.applyValidation.bind(this, this.filter, this.validateArgumentIsAFunction, 1)();
-    this.maxOfList = this.applyValidation.bind(this, this.maxOfList, this.validateArgumentIsAnArray, 0)();
-    this.maxOccurrence = this.applyValidation.bind(this, this.maxOccurrence, this.validateArgumentIsAnArray, 0)();
-    this.trueValues = this.applyValidation.bind(this, this.trueValues, this.validateArgumentIsAnArray, 0)();
-    this.except = this.applyValidation.bind(this, this.except, this.validateArgumentIsAnArray, 0)();
+    this.first = this.applyValidation
+      .bind(this, this.first, this.validateArgumentIsAnArray, 0)();
+    this.tail = this.applyValidation
+      .bind(this, this.tail, this.validateArgumentIsAnArray, 0)();
+    this.last = this.applyValidation
+      .bind(this, this.last, this.validateArgumentIsAnArray, 0)();
+    this.init = this.applyValidation
+      .bind(this, this.init, this.validateArgumentIsAnArray, 0)();
+    this.each = this.applyValidation
+      .bind(this, this.each, this.validateArgumentIsAFunction, 1)();
+    this.filter = this.applyValidation
+      .bind(this, this.filter, this.validateArgumentIsAnArray, 0)();
+    this.filter = this.applyValidation
+      .bind(this, this.filter, this.validateArgumentIsAFunction, 1)();
+    this.maxOfList = this.applyValidation
+      .bind(this, this.maxOfList, this.validateArgumentIsAnArray, 0)();
+    this.maxOccurrence = this.applyValidation
+      .bind(this, this.maxOccurrence, this.validateArgumentIsAnArray, 0)();
+    this.trueValues = this.applyValidation
+      .bind(this, this.trueValues, this.validateArgumentIsAnArray, 0)();
+    this.except = this.applyValidation
+      .bind(this, this.except, this.validateArgumentIsAnArray, 0)();
   }
 
   first(list) {
