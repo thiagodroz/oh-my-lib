@@ -3,7 +3,7 @@ import OhMyLib from '../../src/index';
 
 chai.expect();
 
-const expect = chai.expect;
+const { expect } = chai;
 
 describe('when the method "trueValues" is called', () => {
   it('should return undefined if something different of a list is passed', () => {
@@ -16,7 +16,7 @@ describe('when the method "trueValues" is called', () => {
     expect(OhMyLib.trueValues([0,"",null,undefined])).to.be.empty;
   });
   it('should return only the true elements if a list with more than one element is passed', () => {
-    const list = [5,0,3,"","c",undefined,10];
+    const list = [5, 0, 3, '', 'c', undefined, 10];
     expect(OhMyLib.trueValues(list)).to.contains(5);
     expect(OhMyLib.trueValues(list)).to.contains(3);
     expect(OhMyLib.trueValues(list)).to.contains('c');

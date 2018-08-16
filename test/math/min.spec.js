@@ -3,7 +3,7 @@ import OhMyLib from '../../src/index';
 
 chai.expect();
 
-const expect = chai.expect;
+const { expect } = chai;
 
 describe('when the method "min" is called', () => {
   it('should return the first value if the first is smaller', () => {

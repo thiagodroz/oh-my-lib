@@ -3,7 +3,7 @@ import OhMyLib from '../../src/index';
 
 chai.expect();
 
-const expect = chai.expect;
+const { expect } = chai;
 
 describe('when the method "extractProperty" is called', () => {
   it('should return an empty list if the property is not a string', () => {
@@ -23,7 +23,7 @@ describe('when the method "extractProperty" is called', () => {
       { a: 4, b: 5, c: 6 },
       { a: 7, b: 8, c: 9 },
       { a: 10, b: 11, c: 12 },
-      { a: 13, b: 14, c: 15 }
+      { a: 13, b: 14, c: 15 },
     ];
     const result = OhMyLib.extractProperty(list, 'b');
 
@@ -40,7 +40,7 @@ describe('when the method "extractProperty" is called', () => {
       { a: 4, b: 5, c: 6 },
       { a: 7, b: 8, c: 9 },
       { a: 10, b: 11, c: 12 },
-      { a: 13, b: 14, c: 15 }
+      { a: 13, b: 14, c: 15 },
     ];
 
     expect(OhMyLib.extractProperty(list, 2)).to.be.undefined;

@@ -3,7 +3,7 @@ import OhMyLib from '../../src/index';
 
 chai.expect();
 
-const expect = chai.expect;
+const { expect } = chai;
 
 describe('when the method "maxOfProperty" is called', () => {
   it('should return undefined if something different of a list is passed', () => {
@@ -23,7 +23,7 @@ describe('when the method "maxOfProperty" is called', () => {
       { age: 20 },
       { age: 25 },
       { age: 10 },
-      { age: 40 }
+      { age: 40 },
     ], 'age')).to.be.equal(40);
   });
 });

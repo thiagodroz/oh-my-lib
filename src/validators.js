@@ -3,8 +3,9 @@ export default class Validators {
     return validator.bind(this, toBeValidated, ...passedArguments);
   }
 
-  validateNoneIsUndefined(toBeValidated, ...passedArguments) {
+  validateNoneIsUndefined = (toBeValidated, ...passedArguments) => {
     if (typeof toBeValidated !== 'function') return undefined;
+
 
     for (let index in passedArguments) {
       if (passedArguments[index] === undefined) {
@@ -30,4 +31,4 @@ export default class Validators {
 
     return toBeValidated.bind(this)(...passedArguments);
   }
-};
+}

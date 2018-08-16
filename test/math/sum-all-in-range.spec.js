@@ -3,7 +3,7 @@ import OhMyLib from '../../src/index';
 
 chai.expect();
 
-const expect = chai.expect;
+const { expect } = chai;
 
 describe('when the method "sumAllInRange" is called', () => {
   it('should return undefined if the first parameter is not an integer', () => {

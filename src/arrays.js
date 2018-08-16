@@ -28,26 +28,26 @@ export default class Arrays extends Math {
       .bind(this, this.except, this.validateArgumentIsAnArray, 0)();
   }
 
-  first(list) {
+  first = (list) => {
     if (!list.length) return undefined;
 
     return list[0];
   }
 
-  tail(list) {
+  tail = (list) => {
     if (!list.length) return undefined;
     if (list.length === 1) return [];
 
     return list.slice(1, list.length);
   }
 
-  last(list) {
+  last = (list) => {
     if (!list.length) return undefined;
 
     return list[list.length - 1];
   }
 
-  init(list) {
+  init = (list) => {
     if (!list.length) return undefined;
 
     return list.slice(0, list.length - 1);
@@ -61,7 +61,7 @@ export default class Arrays extends Math {
   }
 
   filter(list, iteratee) {
-    let result = [];
+    const result = [];
 
     this.each(list, (element) => {
       if (iteratee(element)) {
@@ -81,35 +81,35 @@ export default class Arrays extends Math {
     return this.max(list[0], maxOfTheEnd);
   }
 
-  maxOccurrence(list) {
+  maxOccurrence = (list) => {
     if (!list.length) return undefined;
     if (list.length === 1) return list[0];
 
-    let occurrences = [];
+    const occurrences = [];
 
-    list.map((element) => {
+    list.forEach((element) => {
       if (occurrences[element] === undefined) {
         occurrences[element] = 1;
       }
 
-      occurrences[element]++;
+      occurrences[element] += 1;
     });
 
     let mostFrenquent;
     let frequency = 0;
 
-    for (let key in occurrences) {
+    Object.keys(occurrences).forEach((key) => {
       if (occurrences[key] > frequency) {
         frequency = occurrences[key];
         mostFrenquent = key;
       }
-    }
+    });
 
     return mostFrenquent;
   }
 
   trueValues(list) {
-    let result = [];
+    const result = [];
 
     this.each(list, (element) => {
       if (element) result.push(element);
@@ -119,7 +119,7 @@ export default class Arrays extends Math {
   }
 
   except(list, ...exceptions) {
-    let result = [];
+    const result = [];
 
     this.each(list, (element) => {
       if (!exceptions.includes(element)) {
@@ -129,4 +129,4 @@ export default class Arrays extends Math {
 
     return result;
   }
-};
+}

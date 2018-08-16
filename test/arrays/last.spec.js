@@ -3,7 +3,7 @@ import OhMyLib from '../../src/index';
 
 chai.expect();
 
-const expect = chai.expect;
+const { expect } = chai;
 
 describe('when the method "last" is called', () => {
   it('should return undefined if something different of a list is passed', () => {
@@ -16,6 +16,6 @@ describe('when the method "last" is called', () => {
     expect(OhMyLib.last([5])).to.be.equal(5);
   });
   it('should return the last element if a list with more than one element is passed', () => {
-    expect(OhMyLib.last([5,10,2,9])).to.be.equal(9);
+    expect(OhMyLib.last([5, 10, 2, 9])).to.be.equal(9);
   });
 });

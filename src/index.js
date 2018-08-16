@@ -1,2 +1,3 @@
-import { ohMyLib } from './oh-my-git.js';
+import { ohMyLib } from './oh-my-git';
+
 export default ohMyLib;

@@ -3,7 +3,7 @@ import OhMyLib from '../../src/index';
 
 chai.expect();
 
-const expect = chai.expect;
+const { expect } = chai;
 
 describe('when the method "init" is called', () => {
   it('should return undefined if something different of a list is passed', () => {
@@ -16,7 +16,7 @@ describe('when the method "init" is called', () => {
     expect(OhMyLib.init([5])).to.be.empty;
   });
   it('should return the head if a list with more than one element is passed', () => {
-    const list = [5,10,2,9];
+    const list = [5, 10, 2, 9];
     expect(OhMyLib.init(list)).to.contains(5);
     expect(OhMyLib.init(list)).to.contains(10);
     expect(OhMyLib.init(list)).to.contains(2);

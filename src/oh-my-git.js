@@ -5,6 +5,7 @@ class OhMyLib extends Collections {
     super();
     this._name = 'OhMyLib';
   }
+
   get name() {
     return this._name;
   }

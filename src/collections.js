@@ -4,13 +4,14 @@ export default class Collections extends Arrays {
   constructor(props) {
     super(props);
 
-    this.maxOfProperty = this.applyValidation.bind(this, this.maxOfProperty, this.validateArgumentIsAnArray, 0)();
+    this.maxOfProperty = this.applyValidation
+      .bind(this, this.maxOfProperty, this.validateArgumentIsAnArray, 0)();
   }
 
   extractProperty(list, property) {
     if (typeof property !== 'string') return undefined;
 
-    let extractedList = [];
+    const extractedList = [];
 
     this.each(list, (element) => {
       extractedList.push(element[property]);
@@ -25,4 +26,4 @@ export default class Collections extends Arrays {
 
     return this.maxOfList(this.extractProperty(list, property));
   }
-};
+}
